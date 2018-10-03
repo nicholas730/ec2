@@ -44,7 +44,7 @@ app.post('/surveys', (req, res) => {
 // IMPORTANT: Make sure to change the bucket name from "myBucket" above to something unique.
 
 s3bucket.createBucket(function() {
-  var params = {Key: req.body.hole_id, Body: req.body};
+  var params = {Key: req.body.hole_id, Body: 'Data'};
   s3bucket.upload(params, function(err, data) {
     if (err) {
       console.log("Error uploading data: ", err);
