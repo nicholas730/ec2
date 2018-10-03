@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 var AWS = require('aws-sdk');
-AWS.config.region = 'us-west-2';
+AWS.config.region = 'eu-west-2';
 
 // Create a bucket using bound parameters and put something in it.
 
-var s3bucket = new AWS.S3({params: {Bucket: 'myBucket'}});
+var s3bucket = new AWS.S3({params: {Bucket: 'node.nicholas730'}});
 
 // IMPORTANT: Make sure to change the bucket name from "myBucket" above to something unique.
 
