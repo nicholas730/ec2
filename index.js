@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/rigs', (req, res) => {
-  res.send('[{"id":1,"name":"Beretta T4400"},{"id":2,"name":"Geotool GTR 78000"},{"id":3,"name":"Big Rigs"},,{"id":4,"name":"Little Rigs"}]')
+  res.send('[{"id":1,"name":"Beretta T4400"},{"id":2,"name":"Geotool GTR 78000"},{"id":3,"name":"Big Rigs"},{"id":4,"name":"Little Rigs"}]')
 })
 
 app.get('/contacts', (req, res) => {
