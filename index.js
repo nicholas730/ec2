@@ -37,8 +37,6 @@ app.get('/contacts', (req, res) => {
 })
 
 app.post('/surveys', (req, res) => {
-  console.log("Request: ", req);
-  console.log("Body: ", req.body);
   var s3bucket = new AWS.S3({params: {Bucket: 'offsite.nicholas730'}});
 
 // IMPORTANT: Make sure to change the bucket name from "myBucket" above to something unique.
