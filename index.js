@@ -25,4 +25,12 @@ app.get('/', (req, res) => {
   res.send('HEY!')
 })
 
+app.get('/rigs', (req, res) => {
+  res.send('[{"id":1,"name":"Beretta T4400"},{"id":2,"name":"Geotool GTR 78000"}]')
+})
+
+app.get('/contacts', (req, res) => {
+  res.send('[{"id":1,"company_description":"DV8 Development","name":"Stuart H","is_active":true}]')
+})
+
 app.listen(3000, () => console.log('Server running on port 3000'))
