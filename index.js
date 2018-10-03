@@ -10,7 +10,7 @@ var s3bucket = new AWS.S3({params: {Bucket: 'node.nicholas730'}});
 // IMPORTANT: Make sure to change the bucket name from "myBucket" above to something unique.
 
 s3bucket.createBucket(function() {
-  var params = {Key: 'myKey', Body: 'Hello!'};
+  var params = {Key: 'myKey2', Body: 'Helloooo!'};
   s3bucket.upload(params, function(err, data) {
     if (err) {
       console.log("Error uploading data: ", err);
