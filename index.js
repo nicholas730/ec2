@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 var AWS = require('aws-sdk');
 AWS.config.region = 'eu-west-2';
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // Create a bucket using bound parameters and put something in it.
 
@@ -34,12 +37,14 @@ app.get('/contacts', (req, res) => {
 })
 
 app.post('/surveys', (req, res) => {
+  console.log("Request: ", req);
+  console.log("Body: ", req.body);
   var s3bucket = new AWS.S3({params: {Bucket: 'offsite.nicholas730'}});
 
 // IMPORTANT: Make sure to change the bucket name from "myBucket" above to something unique.
 
 s3bucket.createBucket(function() {
-  var params = {Key: 'req.body.hole_id', Body: req.body};
+  var params = {Key: req.body.hole_id, Body: req.body};
   s3bucket.upload(params, function(err, data) {
     if (err) {
       console.log("Error uploading data: ", err);
