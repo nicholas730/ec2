@@ -33,4 +33,22 @@ app.get('/contacts', (req, res) => {
   res.send('[{"id":1,"company_description":"DV8 Development","name":"Stuart H","is_active":true},{"id":2,"company_description":"DV8 Development","name":"Nick","is_active":true},{"id":3,"company_description":"DV8 Development","name":"Lots","is_active":true},{"id":4,"company_description":"DV8 Development","name":"of","is_active":true},{"id":5,"company_description":"DV8 Development","name":"others","is_active":true}]')
 })
 
+app.post('/surveys', (req, res) => {
+  var s3bucket = new AWS.S3({params: {Bucket: 'offsite.nicholas730'}});
+
+// IMPORTANT: Make sure to change the bucket name from "myBucket" above to something unique.
+
+s3bucket.createBucket(function() {
+  var params = {Key: 'req.body.hole_id', Body: req.body};
+  s3bucket.upload(params, function(err, data) {
+    if (err) {
+      console.log("Error uploading data: ", err);
+    } else {
+      console.log("Successfully uploaded data to myBucket/myKey");
+    }
+  });
+});
+  res.send('{"id": 10,"hole_id": "test"}')
+})
+
 app.listen(3000, () => console.log('Server running on port 3000'))
