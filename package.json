@@ -1,18 +1,22 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Express Test Server",
+  "description": "Offsite",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nick",
-  "license": "ISC",
-  "devDependencies": {
-    "express": "^4.16.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholas730/ec2.git"
   },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholas730/ec2/issues"
+  },
+  "homepage": "https://github.com/nicholas730/ec2#readme",
   "dependencies": {
-    "aws-sdk": "^2.327.0",
-    "uuid": "^3.3.2"
+    "express": "^4.16.3"
   }
 }
